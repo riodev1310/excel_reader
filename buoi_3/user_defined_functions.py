@@ -1,10 +1,3 @@
-def send_notification(customer_name, message): 
-    print(f"Gửi thông báo đến {customer_name}: {message}") 
-
-send_notification("Mr. Nguyen", "Báo cáo vừa được gửi đi") 
-
-
-
 def greet(name):
     message = "Xin chào, " + name + "!"  # Biến cục bộ 'message'
     print(message)
@@ -25,12 +18,18 @@ except NameError as e:
     print("Lỗi:", e)  # Kết quả: Lỗi: name 'name' is not defined
     
     
-    
-    
+def send_notification(customer_name, message): 
+    print(f"Gửi thông báo đến {customer_name}: {message}") 
+
 def calculate_profit(revenue, expenses):
     profit = revenue - expenses
     return profit  # Hàm dừng lại ngay sau khi return
-    print("Câu lệnh này sẽ không được thực thi vì nằm sau return")
+    
+    
+# def calculate_profit(revenue, expenses):
+#     profit = revenue - expenses
+#     return profit  # Hàm dừng lại ngay sau khi return
+#     print("Câu lệnh này sẽ không được thực thi vì nằm sau return")
 
 # Gọi hàm
 result = calculate_profit(100, 70)
@@ -44,3 +43,10 @@ def check_profit(profit):
     elif profit < 0:
         return "Bị lỗ"    # Thoát hàm ngay sau return
     return "Hoà vốn"         # Nếu không thỏa mãn điều kiện trên, trả về "Hoà vốn"
+
+
+def is_kpi_achieved(actual_value, kpi):
+    if actual_value > kpi: 
+        return True 
+    else:
+        return False 
