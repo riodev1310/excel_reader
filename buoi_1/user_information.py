@@ -17,10 +17,6 @@ import os
 
 
 excel_file = "user_information.xlsx"
-# if os.path.exists(excel_file):
-#     wb = openpyxl.load_workbook(excel_file)
-#     ws = wb.active
-# else:
 wb = openpyxl.Workbook()
 ws = wb.active
 ws.title = "User Information"
