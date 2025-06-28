@@ -88,7 +88,7 @@ class CoverLetterProcessor:
 
 def main():
     folder_path = "./cover_letters"  # Replace with your folder path
-    excel_file = "so_yeu_ly_lich.xlsx"
+    excel_file = "so_yeu_ly_lich_test.xlsx"
     processor = CoverLetterProcessor(folder_path, excel_file)
     processor.process_documents()
 

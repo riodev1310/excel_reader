@@ -26,16 +26,18 @@ def fill_word_template(data, template_path, output_path):
     
 def create_date_folder_and_save(doc_name):
     now = datetime.now() 
-    folder_path = os.path.join('so_yeu_ly_lich_output', now.strftime("%m-%Y"), now.strftime("%d"))
+    folder_path = os.path.join('don_hang_output', now.strftime("%m-%Y"), now.strftime("%d"))
     os.makedirs(folder_path, exist_ok=True) 
     return os.path.join(folder_path, doc_name) 
 
 
 def process_orders():
-    orders = connect_google_sheet("1YwoUV69rmJG8JxgHpYj-1MsMnK-C7feSccVqp7ylsgA", "Sheet1")
+    orders = connect_google_sheet("106JuailxrkgjNxzb5jzNjucXRxe8uLNVqybSGz6KQAU", "Sheet1")
     for i, order in enumerate(orders, start=1):
-        file_path = create_date_folder_and_save(f"syll_{i}.docx")
-        fill_word_template(order, 'syll_template.docx', file_path)
+        file_path = create_date_folder_and_save(f"don_hang{i}.docx")
+        fill_word_template(order, 'don_hang_template.docx', file_path)
         print(f"Done: {file_path}") 
     
+
+
 process_orders()
